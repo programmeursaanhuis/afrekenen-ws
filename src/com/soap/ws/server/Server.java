@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 import javax.xml.ws.Endpoint;
 
 import com.soap.ws.payment.PaymentMonkey;
+import com.soap.ws.payment.PaymentMonkeyImpl;
 
 public final class Server {
 
@@ -17,8 +18,8 @@ public final class Server {
 
     public static void main(String[] args) {
 
-        PaymentMonkey monkey = new PaymentMonkey();
-        Endpoint.publish(URL, monkey);
+        //PaymentMonkey monkey = new PaymentMonkey();
+        Endpoint.publish(URL, new PaymentMonkeyImpl());
         LOG.info("PaymentMonkey service started successfully ...");
 
     }
